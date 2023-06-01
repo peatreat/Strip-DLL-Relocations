@@ -382,7 +382,7 @@ int main(int argc, char* argv[]) {
 			if (std::string((char*)sect[i].Name).find(".reloc") != std::string::npos) {
 				RtlZeroMemory(RvaToPointer(sect[i].VirtualAddress, buffer), sect[i].SizeOfRawData);
 				RtlZeroMemory(&sect[i], sizeof(IMAGE_SECTION_HEADER));
-				nt->FileHeader.NumberOfSections -= 1;
+				//nt->FileHeader.NumberOfSections -= 1;
 			}
 		}
 
@@ -402,7 +402,7 @@ int main(int argc, char* argv[]) {
 			if (std::string((char*)sect[i].Name).find(".reloc") != std::string::npos) {
 				RtlZeroMemory(RvaToPointer(sect[i].VirtualAddress, buffer), sect[i].SizeOfRawData);
 				RtlZeroMemory(&sect[i], sizeof(IMAGE_SECTION_HEADER));
-				nt32->FileHeader.NumberOfSections -= 1;
+				//nt32->FileHeader.NumberOfSections -= 1;
 			}
 		}
 
